@@ -1,0 +1,16 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Pragadeesh Srinivasan
+N:Srinivasan;Pragadeesh;;;
+ORG:CAPL (Consolidated Analytics)
+TITLE:Bookmarking Analyst
+ROLE:Automation Architect & Financial Analyst
+TEL;TYPE=CELL,VOICE:+918903558066
+TEL;TYPE=WORK,VOICE:+918903558066
+EMAIL;TYPE=INTERNET,WORK:pragadeesh.s96@gmail.com
+URL:https://pragadeeshfolio.netlify.app/
+URL;TYPE=LinkedIn:
+URL;TYPE=GitHub:
+ADR;TYPE=WORK:;;Velachery;Chennai;Tamil Nadu;;India
+NOTE:Data Analytics; RPA; Finance Technology; Digital Strategy; Full-Stack Development.
+END:VCARD

@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrish Group Insider Access</title>
+    <meta name="description"
+        content="Unlock exclusive deals, insights, and updates from Shrish Group. Join our insider community today.">
+    <meta name="keywords" content="Shrish Group, insider access, deals, updates, Shrish Travels, Shrish Association">
+    <link rel="canonical" href="https://shrishgroup.com/insider-access.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon/favicon.ico">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
+    <meta name="theme-color" content="#1a1a2e">
+
+    <meta property="og:title" content="Shrish Group Insider Access">
+    <meta property="og:description" content="Unlock exclusive deals, insights, and updates from Shrish Group.">
+    <meta property="og:image" content="https://shrishgroup.com/assets/images/favicon/web-app-manifest-512x512.png">
+    <meta property="og:url" content="https://shrishgroup.com/insider-access.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shrish Group Insider Access">
+    <meta name="twitter:description" content="Unlock exclusive deals, insights, and updates from Shrish Group.">
+    <meta name="twitter:image" content="https://shrishgroup.com/assets/images/favicon/web-app-manifest-512x512.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --primary-glow: rgba(142, 68, 173, 0.8);
+            --secondary-glow: rgba(231, 76, 60, 0.7);
+            --background-color: #1a1a2e;
+            --card-background: rgba(22, 33, 62, 0.65);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --text-color: #eaf0ff;
+            --label-color: #a0a0c0;
+            --input-bg: rgba(15, 52, 96, 0.5);
+            --placeholder-color: #7a7a9a;
+            --success-color: #27ae60;
+            --error-color: #c0392b;
+            --gradient-start: #e74c3c;
+            --gradient-end: #8e44ad;
+        }
+
+        /* --- Global & Wrapper Styling --- */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100%;
+            overflow-x: hidden;
+        }
+
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            /* Added horizontal padding */
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .page-container {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            box-sizing: border-box;
+        }
+
+        /* --- Notification Toast Styling --- */
+        .notification {
+            position: fixed;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 16px 24px;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            transition: top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .notification.success {
+            background-color: var(--success-color);
+        }
+
+        .notification.error {
+            background-color: var(--error-color);
+        }
+
+        .notification.show {
+            top: 20px;
+        }
+
+        /* --- Animated Background Blobs --- */
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            z-index: -1;
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--primary-glow), transparent 60%);
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.5;
+            animation: move-blob 20s infinite alternate;
+        }
+
+        body::after {
+            background: radial-gradient(circle, var(--secondary-glow), transparent 60%);
+            top: -150px;
+            right: -150px;
+            animation-delay: -10s;
+        }
+
+        @keyframes move-blob {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(100px, -50px) scale(1.2);
+            }
+
+            100% {
+                transform: translate(-50px, 50px) scale(0.8);
+            }
+        }
+
+        /* --- Main Signup Container --- */
+        .signup-container {
+            background-color: var(--card-background);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            max-width: 500px;
+            /* Slightly adjusted max-width */
+            width: 100%;
+            /* Changed from 90% */
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .signup-container h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .signup-container p {
+            color: var(--label-color);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* --- Form Styling --- */
+        #ema_signup_form {
+            display: grid;
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .name-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .mimi_field {
+            position: relative;
+        }
+
+        .mimi_field .icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--label-color);
+            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1rem;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 16px 16px 55px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input::placeholder {
+            color: var(--placeholder-color);
+            opacity: 1;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus {
+            outline: none;
+            background-color: rgba(15, 52, 96, 0.8);
+            box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.4);
+            border-color: rgba(142, 68, 173, 0.7);
+        }
+
+        input[type="text"]:focus+.icon,
+        input[type="email"]:focus+.icon {
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        /* --- Submit Button & Form States --- */
+        .submit {
+            padding: 18px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: #fff;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end), var(--gradient-start));
+            background-size: 200% auto;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
+
+        .submit:hover {
+            background-position: right center;
+            box-shadow: 0 0 25px rgba(142, 68, 173, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .submit:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        input.invalid {
+            border-color: var(--error-color) !important;
+            box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.4) !important;
+        }
+
+        .submit.disabled {
+            background: linear-gradient(90deg, #5a5a5a, #4a4a4a);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+            opacity: 0.7;
+        }
+
+        /* --- Floating Side Elements --- */
+        .side-elements {
+            display: none;
+            /* Hidden by default */
+            position: absolute;
+            top: 50%;
+            right: 100%;
+            /* Position its right edge to the left edge of the parent */
+            transform: translateY(-50%);
+            margin-right: 50px;
+            /* Create space between elements and main card */
+            width: auto;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            /* Space between the social and vcf sections */
+        }
+
+        .side-elements h4 {
+            margin: 0 0 1rem 0;
+            /* Adjusted margin */
+            font-size: 0.9rem;
+            /* Slightly smaller heading */
+        }
+
+        .social-links-container {
+            background: var(--card-background);
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            /* Horizontal icons */
+            justify-content: center;
+            gap: 1.5rem;
+            /* Space between icons */
+        }
+
+        @media (min-width: 992px) {
+            .side-elements {
+                display: flex;
+            }
+        }
+
+        .social-links a {
+            color: var(--label-color);
+            font-size: 1.2rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--text-color);
+            transform: scale(1.2);
+        }
+
+        .vcf-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .vcf-card {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--input-bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--label-color);
+            transition: all 0.3s ease;
+            width: 200px;
+        }
+
+        .vcf-card:hover {
+            background-color: rgba(15, 52, 96, 0.8);
+            color: var(--text-color);
+            box-shadow: 0 0 15px rgba(142, 68, 173, 0.3);
+            transform: translateX(5px);
+        }
+
+        .vcf-card i {
+            font-size: 1.1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 0;
+        }
+
+        footer p {
+            color: var(--label-color);
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Adjustments --- */
+        @media (max-width: 600px) {
+            .name-fields {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .signup-container {
+                padding: 2rem 1.5rem;
+            }
+
+            .signup-container h2 {
+                font-size: 1.8rem;
+            }
+
+            .signup-container p {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+            }
+
+            .page-container {
+                padding: 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .side-elements {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="page-container">
+
+            <div id="notification" class="notification">
+                <i id="notification-icon" class="fa-solid fa-check-circle"></i>
+                <span id="notification-message">This is a message!</span>
+            </div>
+
+            <div class="signup-container" data-aos="fade-up" data-aos-duration="1000">
+                <div class="logo-container">
+                    <img src="assets/images/sh1.webp" alt="Shrish Group Logo" style="height: 50px;">
+                </div>
+                <h2>Get Insider Access</h2>
+                <p>Unlock exclusive deals, insights, and updates from the Shrish Group.</p>
+
+                <form id="ema_signup_form"
+                    action="https://gem.godaddy.com/signups/subscribe/c5706e88242a4b97877f725b931411b3"
+                    accept-charset="UTF-8" method="post">
+                    <input name="utf8" type="hidden" value="✓" autocomplete="off" />
+                    <input type="hidden" name="authenticity_token"
+                        value="CisjWR9LyhwFoSlgIjqUT8FoNJuDM-citWWa8FMQYZ3vS_ohBT2TXj6j-NCtM4TXg46KVfaQ_kKuJNU1oSJFsg"
+                        autocomplete="off" />
+
+                    <div class="name-fields">
+                        <div class="mimi_field">
+                            <i class="icon fa-solid fa-user"></i>
+                            <input id="signup_first_name" name="signup[first_name]" type="text" placeholder="First Name"
+                                data-required-field="First Name is required" />
+                        </div>
+                        <div class="mimi_field">
+                            <i class="icon fa-solid fa-user-tag"></i>
+                            <input id="signup_last_name" name="signup[last_name]" type="text" placeholder="Last Name"
+                                data-required-field="Last Name is required" />
+                        </div>
+                    </div>
+
+                    <div class="mimi_field required">
+                        <i class="icon fa-solid fa-phone"></i>
+                        <input id="signup_phone" name="signup[phone]" type="text" placeholder="Phone*"
+                            data-required-field="Phone is required" />
+                    </div>
+
+                    <div class="mimi_field required">
+                        <i class="icon fa-solid fa-envelope"></i>
+                        <input id="signup_email" name="signup[email]" type="text" placeholder="Email*"
+                            data-required-field="A valid email is required" />
+                    </div>
+
+                    <div style="display:none;">
+                        <input type="text" name="41971c37ecb8b77adbf8828aedd51bb6" tabindex="-1" autocomplete="off" />
+                    </div>
+
+                    <div class="mimi_field">
+                        <input type="submit" class="submit" value="Unlock Access" id="webform_submit_button"
+                            data-default-text="Unlock Access" data-submitting-text="Sending..."
+                            data-invalid-text="↑ Please fix the errors" data-thanks="Thank you!" />
+                    </div>
+                </form>
+            </div>
+
+            <div class="side-elements" data-aos="fade-right" data-aos-delay="500">
+                <div class="social-links-container">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="REPLACE_WITH_FACEBOOK_URL" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="REPLACE_WITH_TWITTER_URL" target="_blank" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="REPLACE_WITH_INSTAGRAM_URL" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="REPLACE_WITH_LINKEDIN_URL" target="_blank" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="vcf-links">
+                    <a href="https://shrishgroup.com/assets/contact/shrish_associates.vcf" class="vcf-card">
+                        <i class="fa-solid fa-address-card"></i>
+                        <span>Save Associates Contact</span>
+                    </a>
+                    <a href="https://shrishgroup.com/assets/contact/shrish_travels.vcf" class="vcf-card">
+                        <i class="fa-solid fa-car"></i>
+                        <span>Save Travels Contact</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <footer>
+            <p>&copy; 2025 Shrish Group. All Rights Reserved.</p>
+        </footer>
+    </div>
+</body>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script> AOS.init({ once: true }); </script>
+<script type="text/javascript">
+    (function (global) {
+        function serialize(form) { if (!form || form.nodeName !== "FORM") { return } var i, j, q = []; for (i = form.elements.length - 1; i >= 0; i = i - 1) { if (form.elements[i].name === "") { continue } switch (form.elements[i].nodeName) { case "INPUT": switch (form.elements[i].type) { case "text": case "hidden": case "password": case "button": case "reset": case "submit": q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value)); break; case "checkbox": case "radio": if (form.elements[i].checked) { q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value)) } break; case "file": break }break; case "TEXTAREA": q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value)); break; case "SELECT": switch (form.elements[i].type) { case "select-one": q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value)); break; case "select-multiple": for (j = form.elements[i].options.length - 1; j >= 0; j = j - 1) { if (form.elements[i].options[j].selected) { q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].options[j].value)) } } break }break; case "BUTTON": switch (form.elements[i].type) { case "reset": case "submit": case "button": q.push(form.elements[i].name + "=" + encodeURIComponent(form.elements[i].value)); break }break } } return q.join("&") };
+
+
+        function extend(destination, source) {
+            for (var prop in source) {
+                destination[prop] = source[prop];
+            }
+        }
+
+        if (!Mimi) var Mimi = {};
+        if (!Mimi.Signups) Mimi.Signups = {};
+
+        Mimi.Signups.EmbedValidation = function () {
+            this.initialize();
+
+            var _this = this;
+            if (document.addEventListener) {
+                this.form.addEventListener('submit', function (e) {
+                    _this.onFormSubmit(e);
+                });
+            } else {
+                this.form.attachEvent('onsubmit', function (e) {
+                    _this.onFormSubmit(e);
+                });
+            }
+        };
+
+        extend(Mimi.Signups.EmbedValidation.prototype, {
+            initialize: function () {
+                this.form = document.getElementById('ema_signup_form');
+                this.submit = document.getElementById('webform_submit_button');
+                this.callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+                this.validEmail = /.+@.+\..+/
+            },
+
+            onFormSubmit: function (e) {
+                e.preventDefault();
+
+                this.validate();
+                if (this.isValid) {
+                    this.submitForm();
+                } else {
+                    this.revalidateOnChange();
+                }
+            },
+
+            validate: function () {
+                this.isValid = true;
+                this.emailValidation();
+                this.fieldAndListValidation();
+                this.updateFormAfterValidation();
+            },
+
+            emailValidation: function () {
+                var email = document.getElementById('signup_email');
+
+                if (this.validEmail.test(email.value)) {
+                    this.removeTextFieldError(email);
+                } else {
+                    this.textFieldError(email);
+                    this.isValid = false;
+                }
+            },
+
+            fieldAndListValidation: function () {
+                var fields = this.form.querySelectorAll('.mimi_field.required');
+
+                for (var i = 0; i < fields.length; ++i) {
+                    var field = fields[i],
+                        type = this.fieldType(field);
+                    if (type === 'checkboxes' || type === 'radio_buttons' || type === 'age_check') {
+                        this.checkboxAndRadioValidation(field);
+                    } else {
+                        this.textAndDropdownValidation(field, type);
+                    }
+                }
+            },
+
+            fieldType: function (field) {
+                var type = field.querySelectorAll('.field_type');
+
+                if (type.length) {
+                    return type[0].getAttribute('data-field-type');
+                } else if (field.className.indexOf('checkgroup') >= 0) {
+                    return 'checkboxes';
+                } else {
+                    return 'text_field';
+                }
+            },
+
+            checkboxAndRadioValidation: function (field) {
+                var inputs = field.getElementsByTagName('input'),
+                    selected = false;
+
+                for (var i = 0; i < inputs.length; ++i) {
+                    var input = inputs[i];
+                    if ((input.type === 'checkbox' || input.type === 'radio') && input.checked) {
+                        selected = true;
+                    }
+                }
+
+                if (selected) {
+                    field.className = field.className.replace(/ invalid/g, '');
+                } else {
+                    if (field.className.indexOf('invalid') === -1) {
+                        field.className += ' invalid';
+                    }
+
+                    this.isValid = false;
+                }
+            },
+
+            textAndDropdownValidation: function (field, type) {
+                var inputs = field.getElementsByTagName('input');
+
+                for (var i = 0; i < inputs.length; ++i) {
+                    var input = inputs[i];
+                    if (input.name.indexOf('signup') >= 0) {
+                        if (type === 'text_field') {
+                            this.textValidation(input);
+                        } else {
+                            this.dropdownValidation(field, input);
+                        }
+                    }
+                }
+                this.htmlEmbedDropdownValidation(field);
+            },
+
+            textValidation: function (input) {
+                if (input.id === 'signup_email') return;
+
+                if (input.value) {
+                    this.removeTextFieldError(input);
+                } else {
+                    this.textFieldError(input);
+                    this.isValid = false;
+                }
+            },
+
+            dropdownValidation: function (field, input) {
+                if (input.value) {
+                    field.className = field.className.replace(/ invalid/g, '');
+                } else {
+                    if (field.className.indexOf('invalid') === -1) field.className += ' invalid';
+                    this.onSelectCallback(input);
+                    this.isValid = false;
+                }
+            },
+
+            htmlEmbedDropdownValidation: function (field) {
+                var dropdowns = field.querySelectorAll('.mimi_html_dropdown');
+                var _this = this;
+
+                for (var i = 0; i < dropdowns.length; ++i) {
+                    var dropdown = dropdowns[i];
+
+                    if (dropdown.value) {
+                        field.className = field.className.replace(/ invalid/g, '');
+                    } else {
+                        if (field.className.indexOf('invalid') === -1) field.className += ' invalid';
+                        this.isValid = false;
+                        dropdown.onchange = (function () { _this.validate(); });
+                    }
+                }
+            },
+
+            textFieldError: function (input) {
+                input.className = 'required invalid';
+                input.placeholder = input.getAttribute('data-required-field');
+            },
+
+            removeTextFieldError: function (input) {
+                input.className = 'required';
+                input.placeholder = '';
+            },
+
+            onSelectCallback: function (input) {
+                if (typeof Widget === 'undefined' || !Widget.BasicDropdown) return;
+
+                var dropdownEl = input.parentNode,
+                    instances = Widget.BasicDropdown.instances,
+                    _this = this;
+
+                for (var i = 0; i < instances.length; ++i) {
+                    var instance = instances[i];
+                    if (instance.wrapperEl === dropdownEl) {
+                        instance.onSelect = function () { _this.validate() };
+                    }
+                }
+            },
+
+            updateFormAfterValidation: function () {
+                this.form.className = this.setFormClassName();
+                this.submit.value = this.submitButtonText();
+                this.submit.disabled = !this.isValid;
+                this.submit.className = this.isValid ? 'submit' : 'disabled';
+            },
+
+            setFormClassName: function () {
+                var name = this.form.className;
+
+                if (this.isValid) {
+                    return name.replace(/\s?mimi_invalid/, '');
+                } else {
+                    if (name.indexOf('mimi_invalid') === -1) {
+                        return name += ' mimi_invalid';
+                    } else {
+                        return name;
+                    }
+                }
+            },
+
+            submitButtonText: function () {
+                var invalidFields = document.querySelectorAll('.invalid'),
+                    text;
+
+                if (this.isValid || !invalidFields) {
+                    text = this.submit.getAttribute('data-default-text');
+                } else {
+                    if (invalidFields.length || invalidFields[0].className.indexOf('checkgroup') === -1) {
+                        text = this.submit.getAttribute('data-invalid-text');
+                    } else {
+                        text = this.submit.getAttribute('data-choose-list');
+                    }
+                }
+                return text;
+            },
+
+            submitForm: function () {
+                this.formSubmitting();
+
+                var _this = this;
+                window[this.callbackName] = function (response) {
+                    delete window[this.callbackName];
+                    document.body.removeChild(script);
+                    _this.onSubmitCallback(response);
+                };
+
+                var script = document.createElement('script');
+                script.src = this.formUrl('json');
+                document.body.appendChild(script);
+            },
+
+            formUrl: function (format) {
+                var action = this.form.action;
+                if (format === 'json') action += '.json';
+                return action + '?callback=' + this.callbackName + '&' + serialize(this.form);
+            },
+
+            formSubmitting: function () {
+                this.form.className += ' mimi_submitting';
+                this.submit.value = this.submit.getAttribute('data-submitting-text');
+                this.submit.disabled = true;
+                this.submit.className = 'disabled';
+            },
+
+            onSubmitCallback: function (response) {
+                if (response.success) {
+                    this.onSubmitSuccess(response.result);
+                } else {
+                    top.location.href = this.formUrl('html');
+                }
+            },
+
+            onSubmitSuccess: function (result) {
+                if (result.has_redirect) {
+                    top.location.href = result.redirect;
+                } else if (result.single_opt_in || !result.confirmation_html) {
+                    this.disableForm();
+                    this.updateSubmitButtonText(this.submit.getAttribute('data-thanks'));
+                } else {
+                    this.showConfirmationText(result.confirmation_html);
+                }
+            },
+
+            showConfirmationText: function (html) {
+                var fields = this.form.querySelectorAll('.mimi_field');
+
+                for (var i = 0; i < fields.length; ++i) {
+                    fields[i].style['display'] = 'none';
+                }
+
+                (this.form.querySelectorAll('fieldset')[0] || this.form).innerHTML = html;
+            },
+
+            disableForm: function () {
+                var elements = this.form.elements;
+                for (var i = 0; i < elements.length; ++i) {
+                    elements[i].disabled = true;
+                }
+            },
+
+            updateSubmitButtonText: function (text) {
+                this.submit.value = text;
+            },
+
+            revalidateOnChange: function () {
+                var fields = this.form.querySelectorAll(".mimi_field.required"),
+                    _this = this;
+
+                var onTextFieldChange = function () {
+                    if (this.getAttribute('name') === 'signup[email]') {
+                        if (_this.validEmail.test(this.value)) _this.validate();
+                    } else {
+                        if (this.value.length === 1) _this.validate();
+                    }
+                }
+
+                for (var i = 0; i < fields.length; ++i) {
+                    var inputs = fields[i].getElementsByTagName('input');
+                    for (var j = 0; j < inputs.length; ++j) {
+                        if (this.fieldType(fields[i]) === 'text_field') {
+                            inputs[j].onkeyup = onTextFieldChange;
+                            inputs[j].onchange = onTextFieldChange;
+                        } else {
+                            inputs[j].onchange = function () { _this.validate() };
+                        }
+                    }
+                }
+            }
+        });
+
+        if (document.addEventListener) {
+            document.addEventListener("DOMContentLoaded", function () {
+                new Mimi.Signups.EmbedValidation();
+            });
+        }
+        else {
+            window.attachEvent('onload', function () {
+                new Mimi.Signups.EmbedValidation();
+            });
+        }
+    })(this);
+</script>
+<script>
+    // 1. Helper function to show your custom notification
+    function showNotification(message, type) {
+        const notification = document.getElementById('notification');
+        const icon = document.getElementById('notification-icon');
+        const messageSpan = document.getElementById('notification-message');
+
+        messageSpan.textContent = message;
+        notification.className = `notification ${type}`; // 'notification success' or 'notification error'
+
+        // Update icon based on type
+        icon.className = (type === 'success')
+            ? 'fa-solid fa-check-circle'
+            : 'fa-solid fa-triangle-exclamation';
+
+        notification.classList.add('show');
+
+        // Hide notification after 5 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 5000);
+    }
+
+    // 2. This part connects your UI to the GoDaddy script
+    document.addEventListener("DOMContentLoaded", function () {
+        // Check if the GoDaddy script object is available
+        if (window.Mimi && Mimi.Signups && Mimi.Signups.EmbedValidation) {
+
+            // --- Override the default success behavior ---
+            Mimi.Signups.EmbedValidation.prototype.onSubmitSuccess = function (result) {
+                // Instead of redirecting, show your custom success notification
+                showNotification('Thank you for subscribing!', 'success');
+
+                // Keep the form disabled to prevent multiple submissions
+                this.disableForm();
+                this.updateSubmitButtonText(this.submit.getAttribute('data-thanks'));
+            };
+
+            // --- Override the validation behavior to show an error toast ---
+            const originalUpdate = Mimi.Signups.EmbedValidation.prototype.updateFormAfterValidation;
+            Mimi.Signups.EmbedValidation.prototype.updateFormAfterValidation = function () {
+                originalUpdate.apply(this); // Run the original logic first
+                if (!this.isValid) {
+                    // If the form is invalid, show your error notification
+                    showNotification('Please fill all required fields correctly.', 'error');
+                }
+            };
+        }
+    });
+</script>
+
+</html>

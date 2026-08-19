@@ -1,0 +1,253 @@
+/* =========================================
+   HOME PAGE ONLY - Hero blob, Ecosystem grid, Why Us matrix
+   ========================================= */
+
+/* ---------- HERO SECTION ---------- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    padding: calc(var(--header-h) + 80px) 0 80px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-eyebrow {
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.hero-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+}
+
+.hero-subheadline {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    max-width: 90%;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.hero-trust-badges {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.hero-trust-badges span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-trust-badges i { color: var(--accent); }
+
+/* GPU-Optimized Animated Blob with Image Mask */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.blob {
+    width: 400px;
+    height: 400px;
+
+    /* 1. The subtle color overlay (Navy to Emerald tint) */
+    /* 2. The actual image url */
+    background-image:
+        linear-gradient(135deg, rgba(15, 23, 42, 0.4) 0%, rgba(16, 185, 129, 0.4) 100%),
+        url('../images/sh1.webp');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    animation: morph 8s ease-in-out infinite;
+    will-change: border-radius, transform;
+    box-shadow: 0 20px 50px rgba(16, 185, 129, 0.3);
+    transition: background-image 0.8s ease-in-out;
+}
+
+@keyframes morph {
+    0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+    34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+    67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+
+/* ---------- DIVISIONS / ECOSYSTEM SECTION ---------- */
+.divisions-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.divisions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.division-card {
+    background: var(--bg-light);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.division-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-glow);
+    background: var(--white);
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.division-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.division-card p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    flex-grow: 1; /* Pushes the link to the bottom */
+    margin-bottom: 25px;
+}
+
+.card-link {
+    font-weight: 600;
+    color: var(--accent);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-link:hover { gap: 12px; }
+
+/* Architect Card Specific Styling */
+.architect-card:hover {
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+.architect-card .card-icon,
+.architect-card .card-link { color: var(--gold); }
+
+/* ---------- WHY US MATRIX ---------- */
+.why-section { padding: 100px 0; background: var(--bg-light); }
+
+.why-matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border-soft);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.why-cell {
+    background: var(--white);
+    padding: 34px 26px;
+    transition: background 0.3s ease;
+}
+
+.why-cell:hover { background: var(--primary-dark); }
+.why-cell:hover h4,
+.why-cell:hover p { color: var(--white); }
+.why-cell:hover i { color: var(--gold); }
+
+.why-cell i { font-size: 1.6rem; color: var(--accent); margin-bottom: 14px; display: block; }
+.why-cell h4 { margin-bottom: 8px; }
+.why-cell p { font-size: 0.88rem; }
+
+/* ---------- LEADERSHIP STRIP ---------- */
+.leaders-strip { padding: 90px 0; background: var(--white); }
+.leaders-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.leader-mini { text-align: center; }
+.leader-mini img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    border: 3px solid var(--accent);
+}
+.leader-mini strong { display: block; color: var(--primary-dark); }
+.leader-mini span { font-size: 0.82rem; color: var(--text-light); }
+
+/* ---------- CTA BAND ---------- */
+.cta-band {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent-dark) 140%);
+    color: var(--white);
+    padding: 70px 0;
+    text-align: center;
+}
+.cta-band h2 { color: var(--white); }
+.cta-band p { color: rgba(255,255,255,0.75); margin: 12px 0 28px; }
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 992px) {
+    .why-matrix { grid-template-columns: repeat(2, 1fr); }
+    .leaders-row { grid-template-columns: repeat(2, 1fr); }
+    .divisions-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .hero-headline { font-size: 2.5rem; }
+    .hero-subheadline { max-width: 100%; }
+
+    .hero-ctas {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .hero-trust-badges { justify-content: center; }
+
+    .blob { width: 280px; height: 280px; }
+
+    .divisions-grid { grid-template-columns: 1fr; }
+    .why-matrix { grid-template-columns: 1fr; }
+}
