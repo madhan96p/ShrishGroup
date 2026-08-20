@@ -126,6 +126,102 @@ document.addEventListener("DOMContentLoaded", () => {
     status.textContent = message;
   }
 
+  /* =========================================================
+   LIVE FIELD VALIDATION
+   ========================================================= */
+
+  function validateSingleField(field) {
+    if (!field) return true;
+
+    const value = field.value.trim();
+
+    clearError(field);
+
+    const group = field.closest(".form-group");
+
+    /* NAME */
+
+    if (field.name === "name") {
+      if (value.length < 3) {
+        setError(field, "Please enter your full name.");
+
+        return false;
+      }
+    }
+
+    /* EMAIL */
+
+    if (field.name === "email") {
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+
+      if (!validEmail) {
+        setError(field, "Please enter a valid email address.");
+
+        return false;
+      }
+    }
+
+    /* PHONE */
+
+    if (field.name === "phone") {
+      const digits = value.replace(/\D/g, "");
+
+      if (digits.length < 10 || digits.length > 15) {
+        setError(field, "Please enter a valid phone number.");
+
+        return false;
+      }
+    }
+
+    /* DIVISION */
+
+    if (field.name === "division") {
+      if (!value) {
+        setError(field, "Please select a division.");
+
+        return false;
+      }
+    }
+
+    /* MESSAGE */
+
+    if (field.name === "message") {
+      if (value.length < 15) {
+        setError(field, "Please tell us a little more about your requirement.");
+
+        return false;
+      }
+    }
+
+    /* VALID */
+
+    if (value && group) {
+      group.classList.add("valid");
+    }
+
+    return true;
+  }
+
+  /* Validate on blur */
+
+  form.querySelectorAll("input, select, textarea").forEach((field) => {
+    field.addEventListener("blur", () => {
+      validateSingleField(field);
+    });
+
+    field.addEventListener("input", () => {
+      if (field.classList.contains("touched")) {
+        validateSingleField(field);
+      }
+
+      field.classList.add("touched");
+    });
+
+    field.addEventListener("change", () => {
+      validateSingleField(field);
+    });
+  });
+
   /* =====================================================
        SUBMIT
        ===================================================== */

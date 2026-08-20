@@ -910,6 +910,13 @@
 
 @media (prefers-reduced-motion: reduce) {
 
+    .top-bar-contact a,
+    .top-bar-contact a i,
+    .top-bar-contact a::after {
+        animation: none;
+        transition: none;
+    }
+
     .page-banner::before,
     .page-banner::after,
     .page-banner h1,

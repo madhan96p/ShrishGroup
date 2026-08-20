@@ -7,11 +7,14 @@
 
 /* ---------- 1. PREMIUM COLOR VARIABLES ---------- */
 :root {
-    --primary-dark: #0f172a;      /* Corporate navy */
+    --primary-dark: #0f172a;
+    /* Corporate navy */
     --primary-mid: #1e293b;
-    --accent: #10b981;            /* Emerald - progress */
+    --accent: #10b981;
+    /* Emerald - progress */
     --accent-dark: #059669;
-    --gold: #d4af37;              /* Trust / premium */
+    --gold: #d4af37;
+    /* Trust / premium */
     --white: #ffffff;
     --bg-light: #f8fafc;
     --text-main: #1f2937;
@@ -78,18 +81,35 @@ select {
 }
 
 /* ---------- 3. TYPOGRAPHY ---------- */
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
     font-weight: 700;
     line-height: 1.2;
     color: var(--primary-dark);
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.2rem; }
-h3 { font-size: 1.3rem; }
-h4 { font-size: 1.05rem; }
+h1 {
+    font-size: 3rem;
+}
 
-p { color: var(--text-light); }
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+}
+
+p {
+    color: var(--text-light);
+}
 
 .eyebrow {
     color: var(--gold);
@@ -109,11 +129,25 @@ p { color: var(--text-light); }
     padding: 0 24px;
 }
 
-.text-center { text-align: center; }
-.mt-0 { margin-top: 0; }
-.mb-40 { margin-bottom: 40px; }
-.section { padding: 100px 0; }
-.section-alt { background: var(--bg-light); }
+.text-center {
+    text-align: center;
+}
+
+.mt-0 {
+    margin-top: 0;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.section-alt {
+    background: var(--bg-light);
+}
 
 .section-title {
     font-size: 2.2rem;
@@ -177,7 +211,10 @@ p { color: var(--text-light); }
     color: var(--white);
 }
 
-.btn-dark:hover { background: var(--primary-mid); transform: translateY(-3px); }
+.btn-dark:hover {
+    background: var(--primary-mid);
+    transform: translateY(-3px);
+}
 
 .glass-card {
     background: var(--glass-bg);
@@ -196,8 +233,16 @@ p { color: var(--text-light); }
     text-align: center;
 }
 
-.page-banner h1 { color: var(--white); font-size: 2.6rem; }
-.page-banner p { color: rgba(255, 255, 255, 0.75); max-width: 720px; margin: 12px auto 0; }
+.page-banner h1 {
+    color: var(--white);
+    font-size: 2.6rem;
+}
+
+.page-banner p {
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 720px;
+    margin: 12px auto 0;
+}
 
 /* ---------- 6. TOP UTILITY BAR ---------- */
 .top-bar {
@@ -217,12 +262,24 @@ p { color: var(--text-light); }
     gap: 20px;
 }
 
-.top-bar a:hover { color: var(--accent); }
-.top-bar-links { display: flex; gap: 22px; align-items: center; }
+.top-bar a:hover {
+    color: var(--accent);
+}
+
+.top-bar-links {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
 
 /* Employee Portal stays deliberately subtle */
-.portal-link { opacity: 0.6; }
-.portal-link:hover { opacity: 1; }
+.portal-link {
+    opacity: 0.6;
+}
+
+.portal-link:hover {
+    opacity: 1;
+}
 
 /* ---------- 7. GLASS HEADER ---------- */
 .site-header {
@@ -235,8 +292,13 @@ p { color: var(--text-light); }
 }
 
 /* "Puma-style" scroll behaviour: hide the utility bar, keep the nav */
-.site-header.scrolled { transform: translateY(calc(-1 * var(--topbar-h))); }
-.site-header.scrolled .main-nav { box-shadow: var(--shadow-soft); }
+.site-header.scrolled {
+    transform: translateY(calc(-1 * var(--topbar-h)));
+}
+
+.site-header.scrolled .main-nav {
+    box-shadow: var(--shadow-soft);
+}
 
 .main-nav {
     height: var(--header-h);
@@ -254,13 +316,44 @@ p { color: var(--text-light); }
     gap: 24px;
 }
 
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand img { width: 42px; height: 42px; border-radius: 8px; }
-.brand-text strong { display: block; font-size: 1.05rem; color: var(--primary-dark); line-height: 1.1; }
-.brand-text span { font-size: 0.7rem; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-.nav-links { display: flex; align-items: center; gap: 28px; }
-.nav-links a { font-size: 0.92rem; font-weight: 500; position: relative; }
+.brand img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.brand-text strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--primary-dark);
+    line-height: 1.1;
+}
+
+.brand-text span {
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    position: relative;
+}
+
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -271,11 +364,21 @@ p { color: var(--text-light); }
     background: var(--accent);
     transition: width 0.25s ease;
 }
-.nav-links a:hover::after,
-.nav-links a.active::after { width: 100%; }
-.nav-links a.active { color: var(--accent); }
 
-.nav-cta { display: flex; align-items: center; gap: 14px; }
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 
 .mobile-menu-toggle {
     display: none;
@@ -300,8 +403,13 @@ p { color: var(--text-light); }
     overflow-y: auto;
 }
 
-body.menu-open .offcanvas { transform: translateX(0); }
-body.menu-open { overflow: hidden; }
+body.menu-open .offcanvas {
+    transform: translateX(0);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
 
 .offcanvas-close {
     background: transparent;
@@ -337,7 +445,10 @@ body.menu-open { overflow: hidden; }
     z-index: 999;
 }
 
-body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
+body.menu-open .offcanvas-backdrop {
+    opacity: 1;
+    visibility: visible;
+}
 
 /* ---------- 9. FOOTER ---------- */
 .site-footer {
@@ -360,18 +471,36 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
     margin-bottom: 18px;
 }
 
-.site-footer a:hover { color: var(--accent); }
-.site-footer li { margin-bottom: 10px; font-size: 0.9rem; }
-.site-footer p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
+.site-footer a:hover {
+    color: var(--accent);
+}
 
-.footer-slogan { color: var(--gold); font-weight: 600; margin-top: 14px; }
+.site-footer li {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.site-footer p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.footer-slogan {
+    color: var(--gold);
+    font-weight: 600;
+    margin-top: 14px;
+}
 
 .architect-credit {
     margin-top: 18px;
     font-size: 0.82rem;
     color: rgba(255, 255, 255, 0.55);
 }
-.architect-credit a { color: var(--gold); font-weight: 600; }
+
+.architect-credit a {
+    color: var(--gold);
+    font-weight: 600;
+}
 
 .footer-bottom {
     margin-top: 50px;
@@ -399,7 +528,12 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
     padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
 }
 
-.app-nav ul { display: flex; justify-content: space-around; align-items: center; }
+.app-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .app-nav a {
     display: flex;
     flex-direction: column;
@@ -408,8 +542,14 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
     font-size: 0.68rem;
     color: var(--text-light);
 }
-.app-nav i { font-size: 1.15rem; }
-.app-nav a.active { color: var(--accent); }
+
+.app-nav i {
+    font-size: 1.15rem;
+}
+
+.app-nav a.active {
+    color: var(--accent);
+}
 
 /* Cycling smart CTA button */
 .mobile-smart-btn {
@@ -429,7 +569,11 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
     box-shadow: var(--shadow-glow);
     transition: opacity 0.35s ease, transform 0.35s ease;
 }
-.mobile-smart-btn.fading { opacity: 0; transform: translateY(6px); }
+
+.mobile-smart-btn.fading {
+    opacity: 0;
+    transform: translateY(6px);
+}
 
 /* ---------- 11. COOKIE BANNER ---------- */
 .cookie-banner {
@@ -445,37 +589,93 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
     flex-wrap: wrap;
     padding: 18px 22px;
 }
-.cookie-banner.visible { display: flex; }
-.cookie-banner p { font-size: 0.85rem; margin: 0; max-width: 640px; }
-.cookie-actions { display: flex; gap: 10px; }
-.cookie-actions button { padding: 10px 20px; font-size: 0.85rem; }
+
+.cookie-banner.visible {
+    display: flex;
+}
+
+.cookie-banner p {
+    font-size: 0.85rem;
+    margin: 0;
+    max-width: 640px;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-actions button {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
 
 /* ---------- 12. RESPONSIVE ---------- */
 @media (max-width: 992px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    h1 { font-size: 2.3rem; }
-    h2 { font-size: 1.8rem; }
+    h1 {
+        font-size: 2.3rem;
+    }
 
-    .top-bar .container { justify-content: center; }
-    .top-bar-links { gap: 16px; }
-    .top-bar .top-bar-contact { display: none; }
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .top-bar .container {
+        justify-content: center;
+    }
+
+    .top-bar-links {
+        gap: 16px;
+    }
+
+    .top-bar .top-bar-contact {
+        display: none;
+    }
 
     .nav-links,
-    .nav-cta { display: none; }
-    .mobile-menu-toggle { display: block; }
+    .nav-cta {
+        display: none;
+    }
 
-    .app-nav { display: block; }
-    .mobile-smart-btn { display: inline-flex; }
+    .mobile-menu-toggle {
+        display: block;
+    }
 
-    body { padding-bottom: 70px; }
+    .app-nav {
+        display: block;
+    }
 
-    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-    .footer-bottom { justify-content: center; text-align: center; }
-    .page-banner { padding: calc(var(--header-h) + 50px) 0 50px; }
-    .section { padding: 70px 0; }
+    .mobile-smart-btn {
+        display: inline-flex;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-bottom {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .page-banner {
+        padding: calc(var(--header-h) + 50px) 0 50px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
 }
 
 /* =========================================
@@ -492,9 +692,13 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
 }
 
 .error-page .section-title,
-.error-page h1 { color: #fff; }
+.error-page h1 {
+    color: #fff;
+}
 
-.error-page .section-subtitle { color: rgba(255, 255, 255, 0.72); }
+.error-page .section-subtitle {
+    color: rgba(255, 255, 255, 0.72);
+}
 
 .error-actions {
     margin-top: 32px;
@@ -507,4 +711,132 @@ body.menu-open .offcanvas-backdrop { opacity: 1; visibility: visible; }
 .error-page .btn-outline {
     border-color: rgba(255, 255, 255, 0.4);
     color: #fff;
+}
+
+/* ---------- TOP BAR CONTACT ANIMATION ---------- */
+
+.top-bar-contact {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    position: relative;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Phone icon */
+.top-bar-contact a i {
+    color: var(--accent);
+
+    font-size: 0.75rem;
+
+    transition:
+        transform 0.35s ease,
+        color 0.3s ease;
+}
+
+/* Animated shine / underline */
+.top-bar-contact a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 22px;
+    right: 0;
+    bottom: -4px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            var(--accent),
+            transparent);
+
+    transform:
+        scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform 0.35s ease;
+}
+
+/* Hover */
+.top-bar-contact a:hover {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.top-bar-contact a:hover i {
+    transform:
+        rotate(-12deg) scale(1.12);
+}
+
+.top-bar-contact a:hover::after {
+    transform:
+        scaleX(1);
+}
+
+
+/* =========================================================
+   AUTOMATIC PHONE PULSE
+   ========================================================= */
+
+.top-bar-contact a i {
+    animation:
+        phonePulse 2.8s ease-in-out infinite;
+}
+
+@keyframes phonePulse {
+
+    0%,
+    70%,
+    100% {
+        transform: scale(1);
+    }
+
+    76% {
+        transform:
+            scale(1.12) rotate(-8deg);
+    }
+
+    82% {
+        transform:
+            scale(0.96) rotate(8deg);
+    }
+
+    88% {
+        transform:
+            scale(1.08) rotate(-5deg);
+    }
+
+    94% {
+        transform:
+            scale(1) rotate(0);
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .top-bar-contact a,
+    .top-bar-contact a i,
+    .top-bar-contact a::after {
+        animation: none;
+        transition: none;
+    }
 }

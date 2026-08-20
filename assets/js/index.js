@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       {
         text: "Call now",
-        href: "tel:+918903558066",
+        href: "tel:+919176500207",
         icon: "fa-solid fa-phone",
       },
       {
